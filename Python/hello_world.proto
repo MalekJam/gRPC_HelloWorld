@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package helloworld; 
+
+// The greeting service definition.
+service Greeter {
+  // Sends a greeting based on a number
+  rpc SayHelloByNumber (NumberRequest) returns (HelloReply) {}
+}
+
+// The request message containing the number.
+message NumberRequest {
+  int32 number = 1;
+}
+
+// The response message containing the message.
+message HelloReply {
+  string message = 1;
+}

@@ -1,0 +1,4 @@
+pip install -r requirements.txt
+
+protoc --python_out=. --grpc_python_out=. helloworld.proto
+
