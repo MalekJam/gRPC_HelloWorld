@@ -17,7 +17,7 @@ This repository contains a gRPC-based project using Python. The project demonstr
 
 ## Project Description
 
-This project demonstrates how to use **gRPC** for communication between client and server using **Python**. It uses **Protocol Buffers** to define a simple service in the `helloworld.proto` file, which is then used to generate Python stubs for both the client and server.
+This project demonstrates how to use **gRPC** for communication between client and server using **Python**. It uses **Protocol Buffers** to define a simple service in the `hello_world.proto` file, which is then used to generate Python stubs for both the client and server.
 
 ## Features
 
