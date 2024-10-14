@@ -6,16 +6,9 @@ This repository contains a gRPC-based project written in Go. The project demonst
 - [Project Description](#project-description)
 - [Features](#features)
 - [Requirements](#requirements)
-- [Setup](#setup)
-  - [Installing Dependencies](#installing-dependencies)
-  - [Compiling Proto Files](#compiling-proto-files)
 - [Running the Application](#running-the-application)
-  - [Building the Server and Client](#building-the-server-and-client)
-  - [Running the Server](#running-the-server)
-  - [Running the Client](#running-the-client)
 - [Testing](#testing)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Project Description
 
@@ -41,3 +34,40 @@ You can install the necessary plugins with the following Go commands:
 ```bash
 go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
 go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
+```
+
+## Running the Application
+
+- Compiling Proto Files
+To generate code from the `.proto` files, use `protoc` with the appropriate plugins for each language:
+```bash
+protoc --go_out=. --go-grpc_out=. helloworld.proto
+```
+This will generate Go files for the gRPC service and the protocol buffer messages based on your `.proto` file.
+
+- Builiding the Server and Client
+Once the `.proto` files have been compiled, you can build the server and client:
+**Build the server**
+```bash
+go build -o $(go env GOPATH)/bin/helloworld_server server.go
+
+```
+**Build the client**
+```bash
+go build -o $(go env GOPATH)/bin/helloworld_client client.go
+
+```
+
+- Testing
+
+**Run the server**
+```bash
+$(go env GOPATH)/bin/helloworld_server
+```
+**Build the client**
+```bash
+$(go env GOPATH)/bin/helloworld_client
+
+```
+
+

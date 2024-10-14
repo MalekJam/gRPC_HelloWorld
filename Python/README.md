@@ -10,10 +10,7 @@ This repository contains a gRPC-based project using Python. The project demonstr
   - [Installing Dependencies](#installing-dependencies)
   - [Compiling Proto Files](#compiling-proto-files)
 - [Running the Application](#running-the-application)
-- [Testing](#testing)
-- [Coverage](#coverage)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Project Description
 
@@ -36,23 +33,6 @@ Python package dependencies are listed in the `requirements.txt` file.
 
 ## Setup
 
-### Installing Dependencies
-
-1. **Clone the repository:**
-
-    ```bash
-    git clone https://github.com/your-username/grpc-python-project.git
-    cd grpc-python-project
-    ```
-
-2. **Install Python dependencies:**
-
-    Install the Python packages listed in `requirements.txt`:
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
 ### Compiling Proto Files
 
 You'll need to compile the `.proto` files using the `protoc` compiler to generate Python code.
@@ -60,13 +40,13 @@ You'll need to compile the `.proto` files using the `protoc` compiler to generat
 1. Install `protoc` if you don't already have it installed. You can download it from the [official Protocol Buffers releases page](https://github.com/protocolbuffers/protobuf/releases), or use a package manager like `brew`:
 
     ```bash
-    brew install protobuf
+    pip install protobuf
     ```
 
 2. Compile the `helloworld.proto` file to generate Python stubs:
 
     ```bash
-    protoc --python_out=. --grpc_python_out=. helloworld.proto
+    protoc --python_out=. --grpc_python_out=. hello_world.proto
     ```
 
 This will generate Python files for the gRPC service and the protocol buffer messages based on your `.proto` file.
@@ -91,37 +71,6 @@ This will generate Python files for the gRPC service and the protocol buffer mes
 
 The client should successfully make requests to the gRPC service, and the server should respond accordingly.
 
-## Testing
 
-The project includes unit tests for the gRPC service. To run the tests:
 
-1. Use the `unittest` module to run all test cases automatically:
 
-    ```bash
-    python -m unittest discover tests
-    ```
-
-This will run all the test cases defined in the `tests` directory.
-
-## Coverage
-
-To measure the test coverage, you can use the `coverage` tool. Here’s how:
-
-1. **Run the tests with coverage tracking:**
-
-    ```bash
-    coverage run -m unittest discover tests
-    ```
-
-2. **Generate the coverage report:**
-
-    Once the tests have run, generate a detailed coverage report:
-
-    ```bash
-    coverage report
-    ```
-
-You can also generate an HTML report for better visualization:
-
-```bash
-coverage html

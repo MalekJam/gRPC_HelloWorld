@@ -29,6 +29,26 @@ The application can be tested in various environments:
 - **Distributed Testing:** The server can be hosted on one PC while the client runs on another, allowing for testing of the network communication.
 - **Mobile Testing:** The application can also be tested by deploying a mobile client on a smartphone, ensuring that it can communicate with the server running on a PC.
 
+## Setup
+
+Installing Dependencies
+
+- Clone the repository
+
+`git clone https://github.com/MalekJam/gRPC_HelloWorld.git`
+
+- Install Go dependencies
+
+`go mod tidy`
+
+- Install Python dependencies
+
+`pip install -r requirements.txt`
+
+- Or for Python activate the environment when in **Python** folder
+
+` .env\scripts\activate.ps1 `
+
 
 ## License
 
