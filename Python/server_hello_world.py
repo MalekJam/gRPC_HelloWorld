@@ -6,13 +6,13 @@ import hello_world_pb2_grpc
 
 class Greeter(hello_world_pb2_grpc.GreeterServicer):
     def SayHelloByNumber(self, request, context):
-
+        
         messages = {
-            1: "Hello, this is message one!",
-            2: "Greetings, you chose number two!",
-            3: "Hello from number three!",
+            1: "Arabic Greeting (مــــــرحبــــا)",
+            2: "French Greeting (Bonjour !)",
+            3: "English Greeting (Good morning !)",
         }
-
+        
         message = messages.get(request.number, "Number not recognized.")
         return hello_world_pb2.HelloReply(message=message)
 
